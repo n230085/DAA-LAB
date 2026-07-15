@@ -6,7 +6,7 @@ for i in range(num):
     n = int(input (f"Enter element {i+1}:"))
     arr.append(n)
 
-def merge_sort(arr):
+def merge_sort(arr): 
     if len(arr)>1:
         mid_arr = len(arr)//2
         left_arr = arr[:mid_arr]
