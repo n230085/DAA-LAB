@@ -1,5 +1,4 @@
 def tsp_held_karp(C):
-
     n = len(C)
 
     # All cities except starting city 0
