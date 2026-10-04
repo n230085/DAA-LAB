@@ -1,6 +1,7 @@
 def kruskal(vertices, edges):
     # Sort edges by weight
     edges.sort(key=lambda x: x[2])
+    #makeSet
     parent = {v: v for v in vertices}
 
     def find(v):
@@ -11,7 +12,7 @@ def kruskal(vertices, edges):
     def union(a, b):
         rootA = find(a)
         rootB = find(b)
-
+        
         if rootA != rootB:
             parent[rootB] = rootA
             return True
@@ -33,19 +34,14 @@ def kruskal(vertices, edges):
     return mst, total_cost
 
 # Vertices
-vertices = ['A', 'B', 'C', 'D','E','F']
+vertices = ['A', 'B', 'C', 'D']
 # Edges: (node1,node2 weight)
 edges = [
-    ('A', 'B', 7),
-    ('A', 'C', 2),
-    ('A', 'D', 6),
-    ('B', 'C', 6),
-    ('B', 'E', 4),
-    ('C','D',6),
-    ('C','F',5),
-    ('C','E',9),
-    ('D','F',3),
-    ('E','F',8)
+    ('A', 'B', 10),
+    ('A', 'C', 6),
+    ('A', 'D', 5),
+    ('B', 'D', 15),
+    ('C', 'D', 4)
 ]
 
 mst, cost = kruskal(vertices, edges)
